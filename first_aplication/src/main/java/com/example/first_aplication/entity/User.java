@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -20,13 +21,18 @@ public class User implements Serializable{
     private Long id;
 
     @Column
+    @NotBlank
     private String firstName;
     @Column
+    @NotBlank
     private String lastName;
     @Column(unique = true)
+    @NotBlank
     private String email;
+    @NotBlank
     @Column(unique = true)
     private String username;
+    @NotBlank
     @Column
     private String password;
 
