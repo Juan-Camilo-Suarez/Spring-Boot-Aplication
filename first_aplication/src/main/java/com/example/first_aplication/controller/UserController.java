@@ -49,6 +49,7 @@ public class UserController {
                 model.addAttribute("listTab","active");
             } catch (Exception e) {
                 model.addAttribute("formError",e.getMessage());
+                System.out.println(e + "soy el error");
                 model.addAttribute("userForm", user);
                 model.addAttribute("formTab","active");
             }
@@ -102,6 +103,17 @@ public class UserController {
     @GetMapping("/editUser/cancel")
     public String cancelEditUser(ModelMap model) {
         return "redirect:/userForm";
+    }
+
+    @GetMapping("/deleteUser/{id}")
+    public String deleteUser(Model model, @PathVariable(name="id")Long id){
+        try {
+            userService.deleteUser(id);
+        } catch (Exception e) {
+            model.addAttribute("deleteError","The user could not be deleted.");
+        }
+        return getUserForm(model);
+
     }
 
 
