@@ -17,6 +17,4 @@ public class Republic {
 
     private String name;
 
-    @OneToMany(mappedBy = "republic")
-    private List<City> cities;
 }

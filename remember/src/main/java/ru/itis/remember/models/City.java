@@ -16,11 +16,11 @@ public class City {
 
     private String name;
 
-    @ManyToOne()
+    @ManyToOne(fetch= FetchType.EAGER)
     @JoinColumn(name = "republic_id")
     private Republic republic;
 
-    @OneToOne
-    @MapsId
-    private District district;
+//    @OneToOne
+//    @MapsId
+//    private District district;
 }

@@ -22,4 +22,8 @@ public class User {
 
     private String password;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id")
+    private City city;
+
 }
