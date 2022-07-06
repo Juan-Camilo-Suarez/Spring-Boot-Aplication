@@ -39,7 +39,7 @@ public class UserController {
 
     @PostMapping("/userForm")public String postUserForm(@Valid @ModelAttribute("userForm")User user, BindingResult result, ModelMap model){
         if(result.hasErrors()){
-            model.addAttribute("userForm", new User());
+            model.addAttribute("userForm", user);
             model.addAttribute("formTab","active");
             System.out.println("err");
         }else{

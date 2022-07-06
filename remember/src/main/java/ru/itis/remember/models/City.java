@@ -1,0 +1,26 @@
+package ru.itis.remember.models;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "city")
+@Getter
+@Setter
+public class City {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    @ManyToOne()
+    @JoinColumn(name = "republic_id")
+    private Republic republic;
+
+    @OneToOne
+    @MapsId
+    private District district;
+}
