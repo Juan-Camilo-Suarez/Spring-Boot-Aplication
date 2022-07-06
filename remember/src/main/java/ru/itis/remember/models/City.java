@@ -20,7 +20,7 @@ public class City {
     @JoinColumn(name = "republic_id")
     private Republic republic;
 
-//    @OneToOne
-//    @MapsId
-//    private District district;
+    @ManyToOne(fetch= FetchType.EAGER)
+    @JoinColumn(name = "district_id")
+    private District district;
 }

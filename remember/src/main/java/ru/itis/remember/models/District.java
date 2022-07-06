@@ -16,8 +16,4 @@ public class District {
 
     private String name;
 
-//    @OneToOne(mappedBy = "district", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private City city;
-
 }
