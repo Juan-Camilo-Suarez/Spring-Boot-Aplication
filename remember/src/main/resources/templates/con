@@ -1,0 +1,3 @@
+    url: jdbc:postgresql://localhost:5432/verano?ApplicationName=rain-bird&sslmode=${DB_SSL_MODE:disable}&prepareThreshold=0
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:Jcss2002}
